@@ -1,6 +1,9 @@
 ### Java template
 *.class
 
+#properties
+*.properties
+
 # Package Files #
 *.jar
 *.war
@@ -20,3 +23,5 @@ idea
 
 #git file
 .git
+
+
