@@ -2,7 +2,7 @@
 *.class
 
 #properties
-*.properties
+activemq.properties
 
 # Package Files #
 *.jar
