@@ -16,6 +16,7 @@ target
 
 #idea file
 *.idea
+idea
 
 #git file
 .git
