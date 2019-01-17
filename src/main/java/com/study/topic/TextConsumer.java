@@ -1,4 +1,4 @@
-package com.study.second;
+package com.study.topic;
 
 import com.study.util.ActivemqPropertiesTools;
 import org.apache.activemq.ActiveMQConnectionFactory;

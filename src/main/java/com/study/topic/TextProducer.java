@@ -1,4 +1,4 @@
-package com.study.second;
+package com.study.topic;
 
 import com.study.util.ActivemqPropertiesTools;
 import org.apache.activemq.ActiveMQConnectionFactory;
@@ -41,7 +41,7 @@ public class TextProducer {
             // 可以降低Session的消耗，在可以容忍重复消息时使用（不推荐使用）
             session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
             // 创建目的地。参数是目的地名称，是目的地的唯一标记
-            destination = session.createQueue("001mq");
+            destination = session.createTopic("test-topic");
             // 通过会话对象，创建消息的发送者procedure
             // 创建的消息发送者，发送的消息一定到指定的目的地中
             // 创建producer的时候，可以不提供目的地。在发送消息的时候提供目的地。
@@ -49,9 +49,7 @@ public class TextProducer {
             // 创建文本消息对象，作为具体数据内容的载体
             //message = session.createTextMessage(datas);
             //producer.send(message);
-            for (int i =0 ; i < 100 ;i++){
-                producer.send(session.createTextMessage("雷硕丰"+Integer.toString(i)));
-            }
+            producer.send(session.createTextMessage("雷硕丰正在学习topic"));
             System.out.println("消息已发送");
         }catch (Exception e){
             e.printStackTrace();
